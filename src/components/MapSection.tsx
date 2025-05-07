@@ -33,12 +33,12 @@ export default function MapSection() {
       </div>
 
       <div
-        className="z-10 rounded-lg"
+        className="z-10 flex justify-center rounded-lg"
         style={{ width: '100%', maxWidth: '600px' }}
       >
         <Map
           center={{ lat: 37.51347, lng: 126.91135 }}
-          style={{ width: '335px', height: '435px' }}
+          style={{ width: '1000px', height: '435px' }}
           level={3}
           isPanto={true}
         >
