@@ -8,7 +8,7 @@ const mapLinks = [
     href: 'https://tmap.life/518eeaba',
     src: '/images/map_nav/tmap.svg',
     alt: '티맵',
-    label: 't Map',
+    label: '티맵',
   },
   {
     href: 'https://map.kakao.com/link/map/신길교회,37.5098,126.9175',
@@ -48,11 +48,11 @@ export default function MapSection() {
         </Map>
       </div>
 
-      <nav className="flex h-[90px] items-center justify-evenly gap-3">
+      <nav className="flex items-center justify-evenly gap-3">
         {mapLinks.map(({ href, src, alt, label }) => (
           <Link key={href} href={href}>
-            <div className="flex h-[45px] w-[121px] items-center justify-center gap-1 rounded-md bg-white2 text-center">
-              <Image src={src} alt={alt} width={30} height={30} />
+            <div className="flex h-[45px] w-[105px] items-center justify-center gap-1 rounded-md bg-white2 text-center">
+              <Image src={src} alt={alt} width={25} height={25} />
               <p>{label}</p>
             </div>
           </Link>
