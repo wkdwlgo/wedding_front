@@ -38,7 +38,7 @@ export default function MapSection() {
       >
         <Map
           center={{ lat: 37.51347, lng: 126.91135 }}
-          style={{ width: '1000px', height: '435px' }}
+          style={{ width: '335px', height: '435px' }}
           level={3}
           isPanto={true}
         >
