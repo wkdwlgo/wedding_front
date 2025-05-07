@@ -1,6 +1,6 @@
 export default function InvitationSection() {
   return (
-    <section className="relative flex flex-col items-center gap-[25px] my-[50px]">
+    <section className="relative my-[50px] flex flex-col items-center gap-[25px]">
       <p className="text-xl font-bold text-woody-brown">Invitation</p>
       <div className="text-center leading-loose">
         서로가 함께한다면,

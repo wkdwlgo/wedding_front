@@ -1,6 +1,7 @@
-import Modal from "@/components/@shared/Modal";
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+
+import Modal from '@/components/@shared/Modal';
 interface AccountCopyModalProps {
   isModal: boolean;
   setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -25,10 +26,10 @@ export default function AccountCopyModal({
       customDimStyle="w-[300px] md:w-[400px] "
     >
       <div className="text-center">
-        <p className="py-7 text-text font-semibold">
+        <p className="py-7 font-semibold text-text">
           {isCompleted
-            ? "계좌번호가 복사되었습니다."
-            : "계좌번호를 복사하지 못했습니다."}
+            ? '계좌번호가 복사되었습니다.'
+            : '계좌번호를 복사하지 못했습니다.'}
         </p>
         {kakaoPayUrl && (
           <Link
@@ -38,7 +39,7 @@ export default function AccountCopyModal({
             className="inline-block"
           >
             <Image
-              src={"/images/icons/kakaopay.svg"}
+              src={'/images/icons/kakaopay.svg'}
               width={100}
               height={50}
               alt="카카오페이아이콘"

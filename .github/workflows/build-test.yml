@@ -3,10 +3,10 @@ name: BuildTest
 on:
   push:
     branches:
-      - "**"
+      - '**'
   pull_request:
     branches:
-      - "**" # 모든 브랜치
+      - '**' # 모든 브랜치
 
 env:
   NEXT_PUBLIC_KAKAO_MAP_API_KEY: ${{ secrets.NEXT_PUBLIC_KAKAO_MAP_API_KEY }}

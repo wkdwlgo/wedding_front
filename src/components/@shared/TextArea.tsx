@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import clsx from "clsx";
+import clsx from 'clsx';
+import React, { useEffect, useRef } from 'react';
 
 type TextAreaProps = {
-  size?: "large" | "small";
-  variant?: "light" | "dark";
+  size?: 'large' | 'small';
+  variant?: 'light' | 'dark';
   label?: string;
   labelText?: string;
-  labelColor?: "charcoal" | "white";
+  labelColor?: 'charcoal' | 'white';
   placeholder?: string;
   isError?: boolean;
   errorMessage?: string;
@@ -23,14 +23,14 @@ type TextAreaProps = {
  */
 
 export default function TextArea({
-  size = "small",
+  size = 'small',
   label,
   labelText,
-  labelColor = "charcoal",
-  variant = "light",
+  labelColor = 'charcoal',
+  variant = 'light',
   placeholder,
   isError = false,
-  errorMessage = "",
+  errorMessage = '',
   inputProps,
   ...props
 }: TextAreaProps) {
@@ -39,7 +39,7 @@ export default function TextArea({
 
   useEffect(() => {
     if (textAreaRef.current) {
-      textAreaRef.current.style.height = "auto";
+      textAreaRef.current.style.height = 'auto';
       textAreaRef.current.style.height = `${textAreaRef.current.scrollHeight}px`;
     }
   }, [inputProps?.value]);
@@ -49,9 +49,9 @@ export default function TextArea({
       {label && (
         <label
           htmlFor={textAreaId}
-          className={clsx("font-semibold", {
-            "text-gray-800": labelColor === "charcoal",
-            "text-white": labelColor === "white",
+          className={clsx('font-semibold', {
+            'text-gray-800': labelColor === 'charcoal',
+            'text-white': labelColor === 'white',
           })}
         >
           {labelText || label}
@@ -59,15 +59,15 @@ export default function TextArea({
       )}
       <div
         className={clsx(
-          "textarea-wrapper relative  w-full overflow-hidden rounded-lg px-4 outline outline-1",
+          'textarea-wrapper relative w-full overflow-hidden rounded-lg px-4 outline outline-1',
           {
-            "outline-status-danger focus-within:outline-status-danger": isError,
-            "outline-transparent focus-within:outline-default-primary":
+            'outline-status-danger focus-within:outline-status-danger': isError,
+            'focus-within:outline-default-primary outline-transparent':
               !isError,
-            "bg-secondary-5": variant === "light",
-            "bg-default-tertiary": variant === "dark",
-            "h-[120px] py-[10px]": size === "small",
-            "h-64 py-4 md:h-[472px] md:px-5": size === "large",
+            'bg-secondary-5': variant === 'light',
+            'bg-default-tertiary': variant === 'dark',
+            'h-[120px] py-[10px]': size === 'small',
+            'h-64 py-4 md:h-[472px] md:px-5': size === 'large',
           }
         )}
       >
@@ -76,19 +76,19 @@ export default function TextArea({
           id={textAreaId}
           placeholder={placeholder}
           className={clsx(
-            "w-full resize-none overflow-auto bg-transparent font-medium leading-6 outline-none ",
+            'w-full resize-none overflow-auto bg-transparent font-medium leading-6 outline-none',
             {
-              "textarea-light-scrollbar min-h-[100px] text-secondary-70 placeholder:text-secondary-50":
-                variant === "light",
-              "textarea-dark-scrollbar h-full text-white placeholder:text-secondary-50":
-                variant === "dark",
+              'textarea-light-scrollbar text-secondary-70 placeholder:text-secondary-50 min-h-[100px]':
+                variant === 'light',
+              'textarea-dark-scrollbar placeholder:text-secondary-50 h-full text-white':
+                variant === 'dark',
             }
           )}
           {...inputProps}
         />
       </div>
       {isError && (
-        <p className="text-xs font-semibold text-status-danger md:text-sm">
+        <p className="text-status-danger text-xs font-semibold md:text-sm">
           {errorMessage}
         </p>
       )}

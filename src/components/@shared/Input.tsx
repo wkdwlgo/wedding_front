@@ -1,14 +1,13 @@
-import React from "react";
-
-import clsx from "clsx";
+import clsx from 'clsx';
+import React from 'react';
 
 type InputProps = {
   label?: string;
   labelText?: string;
-  labelColor?: "charcoal" | "gray" | "white";
-  fontSize?: "14" | "16";
-  variant?: "default" | "elevated";
-  gap?: "8" | "12";
+  labelColor?: 'charcoal' | 'gray' | 'white';
+  fontSize?: '14' | '16';
+  variant?: 'default' | 'elevated';
+  gap?: '8' | '12';
   placeholder?: string;
   isError?: boolean;
   errorMessage?: string;
@@ -32,9 +31,9 @@ export default function Input({
   labelText,
   labelColor,
   placeholder,
-  gap = "12",
-  fontSize = "16",
-  variant = "default",
+  gap = '12',
+  fontSize = '16',
+  variant = 'default',
   isError = false,
   errorMessage,
   inputProps,
@@ -44,21 +43,21 @@ export default function Input({
 
   return (
     <div
-      className={clsx("flex w-full flex-col items-start", {
-        "gap-3": gap === "12",
-        "gap-2": gap === "8",
-        "text-sm": fontSize === "14",
-        "text-md": fontSize === "16",
+      className={clsx('flex w-full flex-col items-start', {
+        'gap-3': gap === '12',
+        'gap-2': gap === '8',
+        'text-sm': fontSize === '14',
+        'text-md': fontSize === '16',
       })}
       {...props}
     >
       {label && (
         <label
           htmlFor={inputId}
-          className={clsx("font-semibold", {
-            "text-point-label": labelColor === "charcoal",
-            "text-secondary-50": labelColor === "gray",
-            "text-white": labelColor === "white",
+          className={clsx('font-semibold', {
+            'text-point-label': labelColor === 'charcoal',
+            'text-secondary-50': labelColor === 'gray',
+            'text-white': labelColor === 'white',
           })}
         >
           {labelText || label}
@@ -68,21 +67,21 @@ export default function Input({
         id={inputId}
         placeholder={placeholder}
         className={clsx(
-          "w-full rounded-lg px-4 py-[10px] font-medium outline outline-1",
+          'w-full rounded-lg px-4 py-[10px] font-medium outline outline-1',
           {
-            "bg-secondary-5 text-secondary-70 placeholder:text-secondary-50":
-              variant === "default",
-            "bg-secondary-100 text-text-default placeholder:text-secondary-70":
-              variant === "elevated",
-            "outline-transparent focus-within:outline-default-primary":
+            'bg-secondary-5 text-secondary-70 placeholder:text-secondary-50':
+              variant === 'default',
+            'bg-secondary-100 text-text-default placeholder:text-secondary-70':
+              variant === 'elevated',
+            'focus-within:outline-default-primary outline-transparent':
               !isError,
-            "outline-status-danger focus-within:outline-status-danger": isError,
+            'outline-status-danger focus-within:outline-status-danger': isError,
           }
         )}
         {...inputProps}
       />
       {isError && (
-        <p className="text-xs font-semibold text-status-danger md:text-sm">
+        <p className="text-status-danger text-xs font-semibold md:text-sm">
           {errorMessage}
         </p>
       )}

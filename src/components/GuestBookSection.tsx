@@ -1,7 +1,8 @@
-"use client";
-import { mockGuestBook } from "@/data/guestBook";
-import { useModal } from "@/hooks/useModal";
-import GuestBookWriteModal from "./GuestBookWriteModal";
+'use client';
+import { mockGuestBook } from '@/data/guestBook';
+import { useModal } from '@/hooks/useModal';
+
+import GuestBookWriteModal from './GuestBookWriteModal';
 export default function GuestBookSection() {
   const {
     isOpen: isGuestBookModal,
@@ -9,18 +10,18 @@ export default function GuestBookSection() {
     closeModal: closeGuestBookModal,
   } = useModal();
   return (
-    <section className="relative flex flex-col items-center gap-[25px] my-[50px]">
-      <p className="text-xl font-bold text-woody-brown mb-2">GuestBook</p>
+    <section className="relative my-[50px] flex flex-col items-center gap-[25px]">
+      <p className="mb-2 text-xl font-bold text-woody-brown">GuestBook</p>
 
-      <div className="bg-sun-light2 w-[100%] px-3 py-5 flex flex-col gap-[15px] rounded-md">
+      <div className="flex w-[100%] flex-col gap-[15px] rounded-md bg-sun-light2 px-3 py-5">
         {mockGuestBook.map((data, i) => (
           <div
             key={i}
-            className="text-text  bg-white2 flex flex-col gap-[7px] px-2 py-3 rounded-md"
+            className="flex flex-col gap-[7px] rounded-md bg-white2 px-2 py-3 text-text"
           >
             <div className="flex items-center justify-between">
               <p className="font-semibold">{data.name}</p>
-              <p className="font-light text-sm">
+              <p className="text-sm font-light">
                 {data.createdAt.slice(0, 10)}
               </p>
             </div>
@@ -29,7 +30,7 @@ export default function GuestBookSection() {
         ))}
       </div>
       <button
-        className="bg-text text-white2 rounded-full px-4 py-3 text-ml"
+        className="text-ml rounded-full bg-text px-4 py-3 text-white2"
         onClick={() => openGuestBookModal()}
       >
         축하메시지 남기기

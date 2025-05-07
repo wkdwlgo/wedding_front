@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { ReactNode, useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from 'react';
 
 interface ModalProps {
   children: ReactNode;
@@ -29,7 +29,7 @@ export default function Modal({
 
     if (isOpen) {
       dialog.showModal();
-      dialog.querySelector("input")?.focus();
+      dialog.querySelector('input')?.focus();
     } else {
       dialog.close();
     }
@@ -38,12 +38,12 @@ export default function Modal({
   // ESC 키 입력 시 모달 닫기 처리
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
+      if (e.key === 'Escape') {
         onClose();
       }
     };
-    document.addEventListener("keydown", handleKeyDown);
-    return () => document.removeEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
   }, [onClose]);
 
   return (
@@ -64,7 +64,7 @@ export default function Modal({
           <img
             src="/images/icons/delete.svg"
             alt="닫기 아이콘"
-            className="w-5 h-5"
+            className="h-5 w-5"
           />
         </button>
       </dialog>

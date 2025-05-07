@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const useToast = () => {
-  const [toastMessage, setToastMessage] = useState<string>("");
+  const [toastMessage, setToastMessage] = useState<string>('');
   const [toastVisible, setToastVisible] = useState<boolean>(false);
-  const [toastType, setToastType] = useState<"success" | "error">("success");
+  const [toastType, setToastType] = useState<'success' | 'error'>('success');
 
-  const showToast = (message: string, type: "success" | "error") => {
+  const showToast = (message: string, type: 'success' | 'error') => {
     setToastMessage(message);
     setToastType(type);
     setToastVisible(true);
@@ -16,11 +16,11 @@ const useToast = () => {
   };
 
   const handleSuccess = (message: string) => {
-    showToast(message, "success");
+    showToast(message, 'success');
   };
 
   const handleError = (message: string) => {
-    showToast(message, "error");
+    showToast(message, 'error');
   };
 
   return {

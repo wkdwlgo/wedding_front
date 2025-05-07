@@ -1,14 +1,14 @@
-import HeroSection from "@/components/HeroSection";
-import "./globals.css";
-import InvitationSection from "@/components/InvitationSection";
-import GallerySection from "@/components/GallerySection";
-import MapSection from "@/components/MapSection";
-import AccountSection from "@/components/AccountSection";
-import GuestBookSection from "@/components/GuestBookSection";
+import './globals.css';
+import AccountSection from '@/components/AccountSection';
+import GallerySection from '@/components/GallerySection';
+import GuestBookSection from '@/components/GuestBookSection';
+import HeroSection from '@/components/HeroSection';
+import InvitationSection from '@/components/InvitationSection';
+import MapSection from '@/components/MapSection';
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-center items-center my-[40px] bg-sub-bg">
+    <main className="my-[40px] flex flex-col items-center justify-center bg-sub-bg">
       <HeroSection />
       <InvitationSection />
       <MapSection />
