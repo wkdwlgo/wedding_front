@@ -103,7 +103,7 @@ export default function AccountSection() {
               alt="화살표"
               className={`${
                 isOpen1 ? 'rotate-180' : 'rotate-0'
-              } transition-transform duration-300`}
+              } transition-transform duration-500`}
             />
           </button>
 
@@ -155,7 +155,7 @@ export default function AccountSection() {
               alt="화살표"
               className={`${
                 isOpen2 ? 'rotate-180' : 'rotate-0'
-              } transition-transform duration-300`}
+              } transition-transform duration-500`}
             />
           </button>
 

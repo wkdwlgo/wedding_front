@@ -38,7 +38,7 @@ export default function MapSection() {
       >
         <Map
           center={{ lat: 37.51347, lng: 126.91135 }}
-          style={{ width: '311px', height: '450px' }}
+          style={{ width: '335px', height: '435px' }}
           level={3}
           isPanto={true}
         >
@@ -48,11 +48,11 @@ export default function MapSection() {
         </Map>
       </div>
 
-      <nav className="flex h-[90px] items-center justify-evenly gap-8">
+      <nav className="flex h-[90px] items-center justify-evenly gap-3">
         {mapLinks.map(({ href, src, alt, label }) => (
           <Link key={href} href={href}>
-            <div className="flex flex-col items-center gap-1 text-center">
-              <Image src={src} alt={alt} width={50} height={50} />
+            <div className="flex h-[45px] w-[121px] items-center justify-center gap-1 rounded-md bg-white2 text-center">
+              <Image src={src} alt={alt} width={30} height={30} />
               <p>{label}</p>
             </div>
           </Link>

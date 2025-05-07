@@ -1,14 +1,14 @@
 import Image from 'next/image';
 export default function HeroSection() {
   return (
-    <section className="relative my-[50px] flex flex-col items-center gap-[25px]">
+    <section className="relative my-[100px] flex flex-col items-center gap-[30px]">
       <p className="text-xl font-bold text-woody-brown">
         And they live happily ever after
       </p>
       <Image
         src="/images/hero.webp"
-        width={800}
-        height={576}
+        width={335}
+        height={200}
         alt="메인 이미지"
         className="object-cover"
         loading="lazy"
