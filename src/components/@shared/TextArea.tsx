@@ -64,7 +64,7 @@ export default function TextArea({
             'outline-status-danger focus-within:outline-status-danger': isError,
             'focus-within:outline-default-primary outline-transparent':
               !isError,
-            'bg-secondary-5': variant === 'light',
+            'bg-white': variant === 'light',
             'bg-default-tertiary': variant === 'dark',
             'h-[120px] py-[10px]': size === 'small',
             'h-64 py-4 md:h-[472px] md:px-5': size === 'large',
@@ -78,7 +78,7 @@ export default function TextArea({
           className={clsx(
             'w-full resize-none overflow-auto bg-transparent font-medium leading-6 outline-none',
             {
-              'textarea-light-scrollbar text-secondary-70 placeholder:text-secondary-50 min-h-[100px]':
+              'textarea-light-scrollbar placeholder:text-secondary-50 min-h-[100px] text-text':
                 variant === 'light',
               'textarea-dark-scrollbar placeholder:text-secondary-50 h-full text-white':
                 variant === 'dark',

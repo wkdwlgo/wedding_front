@@ -69,7 +69,7 @@ export default function Input({
         className={clsx(
           'w-full rounded-lg px-4 py-[10px] font-medium outline outline-1',
           {
-            'bg-secondary-5 text-secondary-70 placeholder:text-secondary-50':
+            'placeholder:text-secondary-50 bg-white text-text':
               variant === 'default',
             'bg-secondary-100 text-text-default placeholder:text-secondary-70':
               variant === 'elevated',

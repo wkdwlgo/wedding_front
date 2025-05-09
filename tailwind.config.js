@@ -14,6 +14,7 @@ module.exports = {
         text: '#2d2d2d',
         'sun-light2': '#F3E4B8',
         white2: '#fcfafa',
+        'status-danger': '#f45d5d',
       },
       spacing: {
         '1/10': '10%',
