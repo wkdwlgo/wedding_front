@@ -1,3 +1,7 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+
 import Modal from '@/components/@shared/Modal';
 
 import Input from './@shared/Input';
@@ -7,11 +11,30 @@ interface GuestBookWriteModalProps {
   setIsModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface FormData {
+  name: string;
+  message: string;
+}
+
 export default function GuestBookWriteModal({
   isModal,
   setIsModal,
 }: GuestBookWriteModalProps) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FormData>();
+
+  const onSubmit = (data: FormData) => {
+    console.log(data);
+    reset();
+    setIsModal(false);
+  };
+
   const closeModalhandler = () => {
+    reset();
     setIsModal(false);
   };
 
@@ -21,19 +44,57 @@ export default function GuestBookWriteModal({
       onClose={closeModalhandler}
       customDimStyle="w-[300px] md:w-[400px] "
     >
-      <div className="flex flex-col gap-5 text-center">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className="flex flex-col gap-5 text-center"
+      >
         <p className="font-semibold text-text">작성하기</p>
-        <Input fontSize="14" gap="8" placeholder="이름" />
-        <TextArea size="small" variant="light" placeholder="축하메시지" />
+        <Input
+          variant="default"
+          fontSize="14"
+          gap="8"
+          placeholder="이름"
+          errorMessage={
+            errors.name?.type === 'maxLength'
+              ? '이름은 10글자 이내로 설정하셔야 합니다.'
+              : ''
+          }
+          isError={!!errors.name}
+          inputProps={{
+            ...register('name', { required: true, maxLength: 10 }),
+          }}
+        />
+        <TextArea
+          size="small"
+          variant="light"
+          placeholder="축하메시지"
+          errorMessage={
+            errors.message?.type === 'maxLength'
+              ? '축하메시지는 500자 이내로 써주셔야 합니다.'
+              : ''
+          }
+          isError={!!errors.message}
+          inputProps={{
+            ...register('message', { required: true, maxLength: 500 }),
+          }}
+        />
+
         <div className="flex items-center justify-center gap-5">
-          <button className="w-[100%] rounded-full bg-text px-4 py-3 text-sm text-white2">
+          <button
+            type="submit"
+            className="w-[100%] rounded-full bg-text px-4 py-3 text-sm text-white2"
+          >
             작성하기
           </button>
-          <button className="w-[100%] rounded-full bg-text px-4 py-3 text-sm text-white2">
+          <button
+            type="button"
+            onClick={closeModalhandler}
+            className="w-[100%] rounded-full bg-text px-4 py-3 text-sm text-white2"
+          >
             취소하기
           </button>
         </div>
-      </div>
+      </form>
     </Modal>
   );
 }
