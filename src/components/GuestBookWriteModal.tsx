@@ -29,13 +29,13 @@ export default function GuestBookWriteModal({
     reset,
   } = useForm<FormData>();
 
-  const { toastVisible, toastMessage, toastType, handleError } = useToast();
+  const { toastVisible, toastMessage, toastType, handleSuccess } = useToast();
 
   const onSubmit = (data: FormData) => {
     console.log(data);
     reset();
-    handleError('API 배포가 되지 않았습니다.');
-    //handleSuccess('메시지 남기기 성공했습니다!');
+    //handleError('API 배포가 되지 않았습니다.');
+    handleSuccess('메시지 남기기 성공했습니다!');
     setIsModal(false);
   };
 
