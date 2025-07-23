@@ -27,7 +27,7 @@ export default function MapSection() {
   return (
     <section className="my-[50px] flex flex-col items-center gap-[25px]">
       <p className="mb-2 text-xl font-bold text-woody-brown">Location</p>
-      <div className="mb-4 text-center leading-loose text-text">
+      <div className="mb-4 leading-loose text-center text-text">
         <p>신길교회</p>
         <p>서울특별시 영등포구 영등포로67가길 9</p>
       </div>
@@ -48,18 +48,18 @@ export default function MapSection() {
         </Map>
       </div>
 
-      <nav className="flex items-center justify-evenly gap-3">
+      <nav className="flex items-center gap-3 justify-evenly">
         {mapLinks.map(({ href, src, alt, label }) => (
           <Link key={href} href={href}>
             <div className="flex h-[45px] w-[105px] items-center justify-center gap-1 rounded-md bg-white2 text-center">
               <Image src={src} alt={alt} width={25} height={25} />
-              <p>{label}</p>
+              <p className='text-sm'>{label}</p>
             </div>
           </Link>
         ))}
       </nav>
 
-      <div className="text-center leading-loose text-text">
+      <div className="leading-loose text-center text-text">
         <p>교회 전용 주차장이 있습니다.</p>
       </div>
     </section>
