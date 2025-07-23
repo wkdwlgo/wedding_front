@@ -32,12 +32,11 @@ export default function GallerySection() {
               alt={`gallery-${i}`}
               fill
               className="object-cover"
-              loading="lazy"
-            />
+              priority />
           </button>
         ))}
       </div>
-      <div className="text-center leading-loose">
+      <div className="leading-loose text-center">
         사진을 누르면 더 크게 볼 수 있어요.
       </div>
       <Lightbox

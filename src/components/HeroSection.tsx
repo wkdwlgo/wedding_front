@@ -11,8 +11,7 @@ export default function HeroSection() {
         height={200}
         alt="메인 이미지"
         className="object-cover"
-        loading="lazy"
-      ></Image>
+        priority />
       <p className="text-2xl font-bold text-text">석 기 범 | 박 혜 림</p>
       <div className="flex flex-col items-center gap-[5px] text-text">
         <p>2025년 6월 21일 오후 1시</p>
