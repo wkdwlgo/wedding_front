@@ -1,36 +1,22 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## 모바일 청첩장
+- 🖥️[사이트 바로가기](https://wedding-front-silk.vercel.app/) 
 
-## Getting Started
 
-First, run the development server:
+## Project
+- SpringBoot와 MySQL을 공부하려고 만든 모바일 청첩장 프로젝트입니다. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 사용기술
+-  Frontend: `Next.js` ,`React`, `Typescript`,  `Tailwind-css`
+-  Backend: `SpringBoot` ,  `MySQL`
+-  Deploy: `vercel`
+-  CI/CD : `github-action`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 전체기능
+1. SpringBoot 와 MySQL을 사용해 게스트북 API 구축을 통한 게스트북 작성
+   - <s>aws 미배포로 인하여 배포된 사이트에선 사용불가 </s>
+2. Lightbox 라이브러리를 활용한 갤러리
+    - 사진확대 가능
+3. kakaoMap API 연동을 활용한 결혼식장 찾기 
+   - 네이버지도, TMAP, kakaoMap에서도 결혼식장을 찾을 수 있도록 링크 연결
+4. 축의금 계좌번호 안내 및 복사 
+   - kakaoBank 링크 연결 
